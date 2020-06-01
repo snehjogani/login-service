@@ -3,6 +3,7 @@ const HTTPStatus = require('http-status');
 
 const AccessToken = require('@AccessToken/model');
 const APIError = require('@api-error');
+const logger = require('@winston')
 
 async function logout(req, res, next) {
   if (!req.isAuthenticated) {
