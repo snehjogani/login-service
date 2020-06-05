@@ -86,7 +86,7 @@ async function login(req, res, next) {
     });
 
   } catch (err) {
-    logger.errro('ERROR > USER SIGNIN > ', err);
+    logger.error('ERROR > USER SIGNIN > ', err);
     return next(err);
   }
 }
