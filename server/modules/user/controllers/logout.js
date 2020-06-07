@@ -14,17 +14,11 @@ async function logout(req, res, next) {
   let accessTokenId = req.accessToken.obj.dataValues.id
 
   try {
-    let filter = {
-      where: {
-        id: accessTokenId
-      }
-    }
+    let filter = { where: { id: accessTokenId } }
 
     let accessToken = await AccessToken.destroy(filter)
 
-    return res.json({
-      message: "Logout successful!"
-    })
+    return res.json({ message: "Logout successful!" })
 
   } catch (err) {
     logger.error('ERROR > CREATING TOKEN > ', err);
